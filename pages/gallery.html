@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея графіки — Григорій Артинов</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: #FFF;
+      border: 1px solid #D0D7DE;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-primary);
+      color: #FFF;
+      border-color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo-link">
+        <img src="../img/logo.png" alt="Логотип" class="logo-img">
+        <div>
+          <div class="logo-text">ГРИГОРІЙ АРТИНОВ</div>
+          <div class="logo-sub">Архітектор Вінниці • 1860–1919</div>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Головна</a></li>
+          <li><a href="heritage.html">Спадщина</a></li>
+          <li><a href="biography.html">Біографія</a></li>
+          <li><a href="map.html">Мапа пам'яток</a></li>
+          <li><a href="gallery.html" class="active">Галерея</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-header">
+      <h1 class="section-title">Галерея цифрової графіки</h1>
+      <p class="section-subtitle">Всі статичні та динамічні графічні матеріали, розроблені в межах курсової роботи</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Всі роботи</button>
+      <button class="filter-btn" data-filter="vector">Векторна графіка (SVG/Inkscape)</button>
+      <button class="filter-btn" data-filter="raster">Растрова реставрація (Photopea)</button>
+      <button class="filter-btn" data-filter="anim">Анімація (FlipAnim)</button>
+    </div>
+
+    <div class="grid-3" id="gallery-grid">
+      <div class="card gallery-card" data-cat="vector">
+        <div class="card-img-wrap">
+          <img src="../img/mosaic-tower.webp" alt="Мозаїка Вежі">
+          <span class="card-tag">Inkscape</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Полігональна мозаїка Вежі</h3>
+          <p class="card-text">Векторна низькополігональна стилізація силуету Водонапірної вежі.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="vector">
+        <div class="card-img-wrap">
+          <img src="../img/mosaic-portrait.webp" alt="Полігональний портрет">
+          <span class="card-tag">Inkscape</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Полігональний портрет зодчого</h3>
+          <p class="card-text">Тріангуляція Делоне обличчя Григорія Артинова (98 граней).</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="vector">
+        <div class="card-img-wrap">
+          <img src="../img/artynov-portrait.webp" alt="Векторний портрет">
+          <span class="card-tag">Inkscape</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Художній векторний портрет</h3>
+          <p class="card-text">Лінійне контурне векторне подання образу зодчого у стилі модерну.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="vector">
+        <div class="card-img-wrap">
+          <img src="../img/blueprint-facade.webp" alt="Креслення фасаду театру">
+          <span class="card-tag">Креслення</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Креслення фасаду театру</h3>
+          <p class="card-text">Ортогональна проєкція класичного портика міського театру 1910 року.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="raster">
+        <div class="card-img-wrap">
+          <img src="../img/savoy-hotel.webp" alt="Готель Савой">
+          <span class="card-tag">Photopea</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Реставрація готелю «Савой»</h3>
+          <p class="card-text">Пошарова ретуш, маскування та колоризація фасаду будівлі.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="raster">
+        <div class="card-img-wrap">
+          <img src="../img/water-tower.webp" alt="Вінницька Вежа">
+          <span class="card-tag">Photopea</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Парадна композиція Вежі</h3>
+          <p class="card-text">Художній колаж пам'ятки з сонячними променями та парком.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="raster">
+        <div class="card-img-wrap">
+          <img src="../img/artynov-studio.webp" alt="Артинов у студії">
+          <span class="card-tag">Photopea</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Зодчий у кабінеті з кресленнями</h3>
+          <p class="card-text">Історична сцена роботи над водогоном міста Вінниця.</p>
+        </div>
+      </div>
+
+      <div class="card gallery-card" data-cat="anim">
+        <div class="card-img-wrap">
+          <img src="../img/tower-animation.gif" alt="Анімація Вежі">
+          <span class="card-tag">FlipAnim</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Покадрова анімація Вежі</h3>
+          <p class="card-text">Циклічний анімаційний ролик зведення та підсвічування споруди.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      © 2026 Вебсайт «Григорій Артинов — архітектор Вінниці». Кафедра ПЗ ВНТУ.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+/* Стилі вебсайту «Григорій Артинов — архітектор Вінниці» */
+:root {
+  --color-primary: #B85D3B;     /* Теракотовий цегляний */
+  --color-primary-dark: #8C3E23;
+  --color-bg-warm: #F4EBD9;     /* Пісочно-кремовий */
+  --color-text-dark: #2B2D42;   /* Графітово-антрацитовий */
+  --color-accent-green: #4E6E5D;/* Патинний оливковий */
+  --color-gold: #D4AF37;        /* Золотисто-бронзовий */
+  --color-white: #FFFFFF;
+  --color-card-bg: #FFFFFF;
+  --font-serif: 'Times New Roman', Georgia, serif;
+  --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --shadow-card: 0 8px 24px rgba(43, 45, 66, 0.08);
+  --shadow-hover: 0 12px 32px rgba(184, 93, 59, 0.18);
+  --radius-card: 12px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF8F5;
+  color: var(--color-text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--color-gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  letter-spacing: 0.5px;
+}
+
+.logo-sub {
+  font-size: 11px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 600;
+  font-size: 15px;
+  transition: var(--transition);
+  position: relative;
+  padding: 6px 0;
+}
+
+nav a:hover, nav a.active {
+  color: var(--color-primary);
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, rgba(244, 235, 217, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%), url('../img/blueprint-facade.webp') center/cover;
+  padding: 70px 24px;
+  border-bottom: 1px solid #E8E2D5;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #4A473E;
+  margin-bottom: 24px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #FFF;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(184, 93, 59, 0.3);
+}
+
+.hero-btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.hero-media {
+  position: relative;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 4px solid #FFF;
+}
+
+/* Sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  color: var(--color-text-dark);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: var(--color-gold);
+}
+
+.section-subtitle {
+  color: #6B675A;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* Card Grids */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  border: 1px solid #ECE7DE;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-gold);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #E8E2D5;
+  position: relative;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.card-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(43, 45, 66, 0.85);
+  color: #FFF;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14.5px;
+  color: #555;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  border-top: 1px solid #F0ECE4;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #777;
+}
+
+/* Animation Showcase */
+.animation-showcase {
+  background: #FFF;
+  border-radius: var(--radius-card);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #E8E2D5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.anim-img-box {
+  background: #1C242E;
+  padding: 20px;
+  border-radius: var(--radius-card);
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.anim-img-box img {
+  max-height: 420px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Interactive Map Section */
+.map-wrap {
+  background: #FFF;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid #E8E2D5;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+}
+
+.map-wrap img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: var(--color-text-dark);
+  color: #D1D5DB;
+  padding: 45px 24px 25px;
+  border-top: 3px solid var(--color-primary);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+.footer-col h3 {
+  color: #FFF;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.footer-col p {
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+  font-size: 13.5px;
+}
+
+.footer-col a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-col a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #3F445A;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12.5px;
+  color: #94A3B8;
+}
+
+@media (max-width: 768px) {
+  .hero-inner, .animation-showcase, .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
